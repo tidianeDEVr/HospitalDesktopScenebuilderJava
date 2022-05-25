@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="674.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.RpListCancelController">
+   <children>
+      <BorderPane layoutX="-5.0" layoutY="-5.0" prefHeight="770.0" prefWidth="684.0" style="-fx-background-color: #EDF0F2;">
+         <top>
+            <AnchorPane prefHeight="316.0" prefWidth="674.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TextField fx:id="txtfMedecin" alignment="CENTER_RIGHT" disable="true" layoutX="36.0" layoutY="151.0" prefHeight="50.0" prefWidth="200.0" style="-fx-border-width: 4; -fx-border-color: #2ECC71; -fx-border-radius: 30; -fx-background-color: #EDF0F2;">
+                     <padding>
+                        <Insets left="15.0" right="15.0" />
+                     </padding>
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="txtfNomPrenom" alignment="CENTER_RIGHT" disable="true" layoutX="36.0" layoutY="65.0" prefHeight="50.0" prefWidth="200.0" style="-fx-border-width: 4; -fx-border-color: #2ECC71; -fx-border-radius: 30; -fx-background-color: #EDF0F2;">
+                     <padding>
+                        <Insets left="15.0" right="15.0" />
+                     </padding>
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </TextField>
+                  <Button layoutX="466.0" layoutY="228.0" mnemonicParsing="false" onAction="#HandleFilterByDate" style="-fx-background-color: #2980B9;" text="Filtrer" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnUpdate" disable="true" layoutX="289.0" layoutY="228.0" mnemonicParsing="false" onAction="#handleUpdatePrest" style="-fx-background-color: #27AE60;" text="Enregistrer" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <JFXDatePicker fx:id="txtfDatePicker" defaultColor="#2ecc71" editable="false" layoutX="263.0" layoutY="65.0" prefHeight="50.0" prefWidth="150.0" />
+                  <Label layoutX="268.0" layoutY="56.0" style="-fx-background-color: #EDF0F2;" text="Date Prest." textFill="#383d45">
+                     <font>
+                        <Font name="Century Gothic" size="15.0" />
+                     </font>
+                     <padding>
+                        <Insets left="5.0" right="5.0" />
+                     </padding>
+                  </Label>
+                  <ComboBox fx:id="cboAction" layoutX="256.0" layoutY="151.0" prefHeight="50.0" prefWidth="150.0" style="-fx-border-width: 4px; -fx-background-color: #EDF0F2; -fx-border-color: #2ECC71; -fx-border-radius: 30px;">
+                     <padding>
+                        <Insets left="10.0" right="5.0" />
+                     </padding>
+                  </ComboBox>
+                  <Label layoutX="274.0" layoutY="142.0" style="-fx-background-color: #EDF0F2;" text="Marquer" textFill="#383d45">
+                     <font>
+                        <Font name="Century Gothic" size="15.0" />
+                     </font>
+                     <padding>
+                        <Insets left="5.0" right="5.0" />
+                     </padding>
+                  </Label>
+                  <Text fill="#393e46" layoutX="42.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Annuler ou valider un prestation">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fill="RED" layoutX="189.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tous les champs sont obligatoires !" textAlignment="CENTER" visible="false">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Label layoutX="61.0" layoutY="56.0" style="-fx-background-color: #EDF0F2;" text="Patient" textFill="#383d45">
+                     <font>
+                        <Font name="Century Gothic" size="15.0" />
+                     </font>
+                     <padding>
+                        <Insets left="2.0" right="2.0" />
+                     </padding>
+                  </Label>
+                  <Text fx:id="txtfError" fill="RED" layoutX="42.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Error" textAlignment="CENTER" visible="false">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Label layoutX="60.0" layoutY="142.0" style="-fx-background-color: #EDF0F2;" text="Medecin" textFill="#383d45">
+                     <font>
+                        <Font name="Century Gothic" size="15.0" />
+                     </font>
+                     <padding>
+                        <Insets left="5.0" right="5.0" />
+                     </padding>
+                  </Label>
+                  <Text fill="#393e46" layoutX="467.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filtrer les prestations">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <ComboBox fx:id="cboFiltreStatutPrest" layoutX="467.0" layoutY="151.0" prefHeight="50.0" prefWidth="200.0" style="-fx-border-width: 4px; -fx-background-color: #EDF0F2; -fx-border-color: #2ECC71; -fx-border-radius: 30px;">
+                     <padding>
+                        <Insets left="10.0" right="5.0" />
+                     </padding>
+                  </ComboBox>
+                  <Label layoutX="486.0" layoutY="142.0" style="-fx-background-color: #EDF0F2;" text="Statut" textFill="#383d45">
+                     <font>
+                        <Font name="Century Gothic" size="15.0" />
+                     </font>
+                     <padding>
+                        <Insets left="5.0" right="5.0" />
+                     </padding>
+                  </Label>
+                  <Line layoutX="437.0" layoutY="56.0" startY="166.0" stroke="#777777" />
+                  <Button fx:id="btnCancel" layoutX="164.0" layoutY="228.0" mnemonicParsing="false" onAction="#handleClear" style="-fx-background-color: #2ECC71;" text="Annuler" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <JFXDatePicker fx:id="txtfDateFilter" defaultColor="#2ecc71" editable="false" layoutX="466.0" layoutY="55.0" prefHeight="50.0" prefWidth="200.0" />
+               </children>
+            </AnchorPane>
+         </top>
+         <bottom>
+            <AnchorPane prefHeight="441.0" prefWidth="674.0" stylesheets="@css/tableview.css" BorderPane.alignment="CENTER">
+               <children>
+                  <TableView fx:id="tblvRendezvous" layoutX="90.0" layoutY="62.0" onMouseClicked="#HandleSelectPrest" prefHeight="372.0" prefWidth="674.0" style="-fx-background-color: #EDF0F2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <columns>
+                        <TableColumn fx:id="tblcMedecin" minWidth="-Infinity" prefWidth="127.0" resizable="false" text="MEDECIN" />
+                        <TableColumn fx:id="tblcType" prefWidth="124.0" resizable="false" text="TYPE" />
+                        <TableColumn fx:id="tblcDateSouh" minWidth="-Infinity" prefWidth="177.0" resizable="false" text="DATE" />
+                        <TableColumn fx:id="tblcStatut" minWidth="0.0" prefWidth="121.0" resizable="false" text="STATUT" />
+                        <TableColumn fx:id="tblcPrestation" prefWidth="126.0" resizable="false" text="PRESTATION" />
+                     </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>
